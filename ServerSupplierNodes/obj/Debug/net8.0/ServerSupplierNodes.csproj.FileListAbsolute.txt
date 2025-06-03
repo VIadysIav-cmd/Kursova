@@ -1,0 +1,14 @@
+C:\Users\potap\Documents\Visual Studio Files\Kursova\ServerSupplierNodes\bin\Debug\net8.0\ServerSupplierNodes.exe
+C:\Users\potap\Documents\Visual Studio Files\Kursova\ServerSupplierNodes\bin\Debug\net8.0\ServerSupplierNodes.deps.json
+C:\Users\potap\Documents\Visual Studio Files\Kursova\ServerSupplierNodes\bin\Debug\net8.0\ServerSupplierNodes.runtimeconfig.json
+C:\Users\potap\Documents\Visual Studio Files\Kursova\ServerSupplierNodes\bin\Debug\net8.0\ServerSupplierNodes.dll
+C:\Users\potap\Documents\Visual Studio Files\Kursova\ServerSupplierNodes\bin\Debug\net8.0\ServerSupplierNodes.pdb
+C:\Users\potap\Documents\Visual Studio Files\Kursova\ServerSupplierNodes\obj\Debug\net8.0\ServerSupplierNodes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\potap\Documents\Visual Studio Files\Kursova\ServerSupplierNodes\obj\Debug\net8.0\ServerSupplierNodes.AssemblyInfoInputs.cache
+C:\Users\potap\Documents\Visual Studio Files\Kursova\ServerSupplierNodes\obj\Debug\net8.0\ServerSupplierNodes.AssemblyInfo.cs
+C:\Users\potap\Documents\Visual Studio Files\Kursova\ServerSupplierNodes\obj\Debug\net8.0\ServerSupplierNodes.csproj.CoreCompileInputs.cache
+C:\Users\potap\Documents\Visual Studio Files\Kursova\ServerSupplierNodes\obj\Debug\net8.0\ServerSupplierNodes.dll
+C:\Users\potap\Documents\Visual Studio Files\Kursova\ServerSupplierNodes\obj\Debug\net8.0\refint\ServerSupplierNodes.dll
+C:\Users\potap\Documents\Visual Studio Files\Kursova\ServerSupplierNodes\obj\Debug\net8.0\ServerSupplierNodes.pdb
+C:\Users\potap\Documents\Visual Studio Files\Kursova\ServerSupplierNodes\obj\Debug\net8.0\ServerSupplierNodes.genruntimeconfig.cache
+C:\Users\potap\Documents\Visual Studio Files\Kursova\ServerSupplierNodes\obj\Debug\net8.0\ref\ServerSupplierNodes.dll

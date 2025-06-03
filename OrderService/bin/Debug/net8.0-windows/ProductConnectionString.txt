@@ -1,0 +1,1 @@
+Server=VLAD\MSSQLSERVER02;Initial Catalog=InventoryDB;Integrated Security=True;TrustServerCertificate=True;
