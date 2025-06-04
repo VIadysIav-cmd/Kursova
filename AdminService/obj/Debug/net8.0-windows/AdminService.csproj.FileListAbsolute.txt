@@ -69,3 +69,4 @@ C:\Users\potap\Documents\Visual Studio Files\Kursova\AdminService\obj\Debug\net8
 C:\Users\potap\Documents\Visual Studio Files\Kursova\AdminService\obj\Debug\net8.0-windows\AdminService.MainForm.resources
 C:\Users\potap\Documents\Visual Studio Files\Kursova\AdminService\obj\Debug\net8.0-windows\AdminService.Properties.Resources.resources
 C:\Users\potap\Documents\Visual Studio Files\Kursova\AdminService\obj\Debug\net8.0-windows\AdminSer.1AF7464D.Up2Date
+C:\Users\potap\Documents\Visual Studio Files\Kursova\AdminService\obj\Debug\net8.0-windows\AdminService.sourcelink.json

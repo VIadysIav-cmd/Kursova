@@ -44,7 +44,7 @@ namespace OrderService
         private void button_AddToBasket_Click(object sender, EventArgs e)
         {
             AddToBasket();
-          
+
         }
 
         private void CreateOrderButton_Click(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace OrderService
                 return;
             }
 
-            string text = label_Total.Text.Replace("Сумма заказа:", "").Trim();
+            string text = label_Total.Text.Replace("Сума замовлення:", "").Trim();
 
             decimal totalSum = decimal.Parse(text, NumberStyles.Currency, CultureInfo.GetCultureInfo("uk-UA"));
 
@@ -68,7 +68,7 @@ namespace OrderService
             label_Name.Text = string.Empty;
             label_Price.Text = string.Empty;
             textBox_Quantity.Text = string.Empty;
-            MessageBox.Show("Заказ оформлен.");
+            MessageBox.Show("Замовлення сформовано.");
         }
 
         private void button_DeleateFromBasket_Click(object sender, EventArgs e)
@@ -77,38 +77,38 @@ namespace OrderService
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {  
-                if (e.RowIndex >= 0 && e.RowIndex < BasketDataGridView.Rows.Count)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < BasketDataGridView.Rows.Count)
+            {
+                var row = BasketDataGridView.Rows[e.RowIndex];
+                string? name = row.Cells["Name"].Value?.ToString();
+                string? priceStr = row.Cells["Price"].Value?.ToString();
+
+                if (!string.IsNullOrEmpty(name) && decimal.TryParse(priceStr, out decimal price))
                 {
-                    var row = BasketDataGridView.Rows[e.RowIndex];
-                    string? name = row.Cells["Name"].Value?.ToString();
-                    string? priceStr = row.Cells["Price"].Value?.ToString();
-
-                    if (!string.IsNullOrEmpty(name) && decimal.TryParse(priceStr, out decimal price))
+                    // Ищем товар в корзине по имени
+                    var item = _basket.GetItems().FirstOrDefault(i => i.Name == name);
+                    // Если нашли (кортеж по умолчанию — не null, а (null, 0, 0, 0))
+                    if (!string.IsNullOrEmpty(item.Name))
                     {
-                        // Ищем товар в корзине по имени
-                        var item = _basket.GetItems().FirstOrDefault(i => i.Name == name);
-                        // Если нашли (кортеж по умолчанию — не null, а (null, 0, 0, 0))
-                        if (!string.IsNullOrEmpty(item.Name))
-                        {
-                            // Создаём _currentProduct вручную
-                            _currentProduct = new Product(
-                                item.Id, // Id у тебя не хранится в кортеже — можно оставить 0
-                                item.Name,
-                                item.Price,
-                                item.Quantity
-                            );
+                        // Создаём _currentProduct вручную
+                        _currentProduct = new Product(
+                            item.Id, // Id у тебя не хранится в кортеже — можно оставить 0
+                            item.Name,
+                            item.Price,
+                            item.Quantity
+                        );
 
-                            ShowProductDetails(_currentProduct);
-                        }
+                        ShowProductDetails(_currentProduct);
                     }
                 }
-            
+            }
+
         }
 
         private void ClearOrderButton_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Вы уверены, что хотите аннулировать корзину?", "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var result = MessageBox.Show("Ви впевнені, що бажаєте видалити корзину?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
 
@@ -131,7 +131,7 @@ namespace OrderService
                 label_Price.Text = string.Empty;
                 textBox_Quantity.Text = string.Empty;
                 label_Total.Text = string.Empty;
-                MessageBox.Show("Корзина аннулирована.");
+                MessageBox.Show("Корзина анульована.");
             }
 
         }
@@ -148,7 +148,7 @@ namespace OrderService
         {
             if (_currentProduct == null)
             {
-                MessageBox.Show("Выберите товар для удаления.");
+                MessageBox.Show("Оберіть товар для видалення.");
                 return;
             }
 
@@ -168,16 +168,16 @@ namespace OrderService
                     }
 
                     UpdateBasketView();
-                    MessageBox.Show($"Товар удалён из корзины!");
+                    MessageBox.Show($"Товар видален з корзини!");
                 }
                 else
                 {
-                    MessageBox.Show("Такого количества нет в корзине.");
+                    MessageBox.Show("Такої кількості нема в корзині.");
                 }
             }
             else
             {
-                MessageBox.Show("Введите корректное количество для удаления.");
+                MessageBox.Show("Введить коректну кількість для видалення.");
             }
         }
 
@@ -190,10 +190,10 @@ namespace OrderService
             BasketDataGridView.DataSource = null;
 
             // Добавляем столбцы вручную
-            BasketDataGridView.Columns.Add("Name", "Название");
-            BasketDataGridView.Columns.Add("Price", "Цена");
-            BasketDataGridView.Columns.Add("Quantity", "Количество");
-            BasketDataGridView.Columns.Add("Total", "Сумма");
+            BasketDataGridView.Columns.Add("Name", "Назва");
+            BasketDataGridView.Columns.Add("Price", "Ціна");
+            BasketDataGridView.Columns.Add("Quantity", "Кількість");
+            BasketDataGridView.Columns.Add("Total", "Сума");
 
             // Заполнение данными
             foreach (var item in items)
@@ -210,7 +210,7 @@ namespace OrderService
             {
                 if (_currentProduct == null)
                 {
-                    MessageBox.Show("Товар не выбран. Найдите товар перед добавлением в корзину.");
+                    MessageBox.Show("Товар не обран. Знайдіть товар перед додаванням в корзину.");
                     return;
                 }
 
@@ -226,28 +226,23 @@ namespace OrderService
                     _services.Update.UpdateProductQuantity(dbProduct.Id, newDbQuantity);
 
                     UpdateBasketView();
-                    MessageBox.Show("Товар добавлен в корзину!");
+                    MessageBox.Show("Товар в корзині!");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Ошибка при добавлении товара: {ex.Message}");
+                    MessageBox.Show($"Помилка при додаванні товару: {ex.Message}");
                 }
             }
             else
             {
-                MessageBox.Show("Введите корректное количество.");
+                MessageBox.Show("Введіть коректноу кількість.");
             }
         }
 
         private void UpdateBasketTotal()
         {
             decimal total = _basket.GetTotalSum();
-            label_Total.Text = $"Сумма заказа: {total:C}";
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            label_Total.Text = $"Сума замовлення: {total:C}";
         }
     }
 }

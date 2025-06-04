@@ -15,10 +15,10 @@ namespace OrderService.Models
 
         public void AddProduct(Product product, int quantity)
         {
-            if (quantity <= 0) throw new ArgumentException("Количество должно быть больше нуля.");
+            if (quantity <= 0) throw new ArgumentException("Кількість повинна бути більше нуля.");
            
             if (product == null)
-                throw new InvalidOperationException("Товар не найден в базе данных.");
+                throw new InvalidOperationException("Товар не знайден в базі.");
 
             var totalRequested = quantity;
             var existingProduct = _items.FirstOrDefault(p => p.Id == product.Id);
@@ -26,7 +26,7 @@ namespace OrderService.Models
                 totalRequested += existingProduct.Quantity;
 
             if (totalRequested > product.Quantity)
-                throw new InvalidOperationException("Недостаточное количество товара в базе данных.");
+                throw new InvalidOperationException("Склад не може видвти таку кількіть.");
 
 
             if (existingProduct != null)

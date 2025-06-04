@@ -1,7 +1,6 @@
 ﻿using System.Data;
 using System.Text;
 using System.Security.Cryptography;
-using AdminService.Models;
 using AdminService.Interfaces;
 using AdminService.Services;
 
@@ -40,7 +39,7 @@ namespace AdminService.Forms
                 }
 
                 var selectedRow = dataGridViewUsers.SelectedRows[0];
-                string username = selectedRow.Cells["Імя"].Value?.ToString();
+                string username = selectedRow.Cells["Ім'я"].Value?.ToString();
                 string passwordHash = selectedRow.Cells["Пароль"].Value?.ToString();
 
                 if (string.IsNullOrWhiteSpace(username))

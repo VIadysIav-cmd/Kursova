@@ -64,3 +64,4 @@ C:\Users\potap\Documents\Visual Studio Files\Kursova\OrderService\obj\Debug\net8
 C:\Users\potap\Documents\Visual Studio Files\Kursova\OrderService\obj\Debug\net8.0-windows\OrderService.genruntimeconfig.cache
 C:\Users\potap\Documents\Visual Studio Files\Kursova\OrderService\obj\Debug\net8.0-windows\ref\OrderService.dll
 C:\Users\potap\Documents\Visual Studio Files\Kursova\OrderService\obj\Debug\net8.0-windows\OrderSer.4493321F.Up2Date
+C:\Users\potap\Documents\Visual Studio Files\Kursova\OrderService\obj\Debug\net8.0-windows\OrderService.sourcelink.json

@@ -50,17 +50,17 @@ namespace AdminService.Models
                 }
                 else
                 {
-                    MessageBox.Show("Данные отсутствуют", "Ответ от сервера", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Данних нема", "Відповідь сервера", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (SocketException)
             {
-                MessageBox.Show("Не удалось подключиться к серверу. Проверьте, запущен ли он и доступен ли IP/порт.",
-                                "Ошибка подключения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Не вийшло підключиться до серверу. Перевірте, чи працює він та є доступ по IP/порт.",
+                                "Помилка підключения", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при подключении к серверу: {ex.Message}");
+                MessageBox.Show($"Помилка при підключенні до серверу: {ex.Message}");
             }
         }
     }

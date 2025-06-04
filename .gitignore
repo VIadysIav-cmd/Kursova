@@ -1,0 +1,29 @@
+# Ignore Visual Studio files
+.vs/
+*.user
+*.suo
+
+# Build results
+bin/
+obj/
+[Bb]uild/
+[Bb]uildOutput/
+
+# Temporary files
+*.tmp
+*.log
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# ReSharper
+_ReSharper*/
+
+# Others
+*.db
+*.db-wal
+*.db-shm
+*.vsidx
